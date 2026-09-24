@@ -1,0 +1,38 @@
+#To do manager
+tasks = []
+
+while True:
+    print("\nWelcome to task manager")
+    print("1. Add task")
+    print("2. Delete task")
+    print("3. View task")
+    print("4. Complete task")
+    print("5. Exit")
+    user_input = int(input("Enter your choice: "))
+    if user_input == 1:
+        task = input("Enter the task you want to add: ")
+        tasks.append(task)
+        print("Task saved successfully")
+    elif user_input == 2:
+        print("Your tasks are:")
+        for i, t in enumerate(tasks, start=1):
+            print(i, t)
+        index = int(input("Enter the task number you want to delete: "))
+        tasks.pop(index - 1)
+        print("Task deleted successfully")
+    elif user_input == 3:
+        print("Your pending tasks are:")
+        for i, t in enumerate(tasks, start=1):
+            print(i, t)
+    elif user_input == 4:
+        print("Your tasks are:")
+        for i, t in enumerate(tasks, start=1):
+            print(i, t)
+        index = int(input("Enter the task number you completed: "))
+        tasks[index - 1] = "[DONE] " + tasks[index - 1]
+        print("Task marked as complete")
+    elif user_input == 5:
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice, try again")
